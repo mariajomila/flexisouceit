@@ -1,8 +1,40 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var fileNames = ViewData["Filenames"];
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button data-toggle="collapse" data-target="#exam">Exam Description</button>
+    <div id="exam" class="collapse">
+        <p style="text-align:justify; white-space:pre">
+            Dear candidate,
+
+            Here at Flexisource, we are usually assigned by client a couple of data processing  tasks from multiple sources such as database
+            including data from files like XML.To test your knowledge in C#.NET development, presented here is a new mvc dotnet core application.
+            You are assigned to complete the solution based on the following specifications:
+            1.	The XML files in each client should be enumerated as JSON data based on the configured client settings in app settings file.
+            Each client has its own preferred file format and ordering of files.
+
+            Client A requires enumerating the file based on the ff order: shovel, waghor, blaze, discus.
+            Client B requires enumerating the file based on the ff order: orca, widget, eclair, talon.
+
+            When the files contains the same name, the file should be ordered based on date, first in first out basis.
+
+            It is also important that the files to be enumerated are only the files that comply to the client's preferred format, the file
+            name format are what the majority of the files on the client's respective file folders are.
+
+            2.	To test your knowledge in objected oriented programming, we require the the core functionality of the solution to be confirmed
+            and verified through unit tests.
+            3.	To submit your answer, please upload the code included in this package on your own Github repo, it is important that the repository
+            should be a public repository. Create a new branch from the base repository you created and make a pull request to it and send the link of
+            the repository to us for checking. Please note that it is important to create a PR so the changes you made on the repository as an answer
+            to this exam will be clear and will provide easy checking.
+
+            Goodluck and happy coding!
+        </p>
+    </div>
+    <button data-toggle="collapse" data-target="#answer">Candidate Answer</button>
+    <div id="answer" class="collapse text-left">
+        <span>@fileNames</span><br />
+    </div>
 </div>
